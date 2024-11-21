@@ -1,0 +1,76 @@
+<div class="barraTituloCRUD"> Festivos Colombia </div>
+
+<div class="container">
+  <!-- Formulario para listar -->
+  <div class="form-group">
+    <label for="anio">Ingresa el año:</label>
+    <input
+      type="number"
+      id="anio"
+      [(ngModel)]="anio"
+      class="input-group"
+      placeholder="Ejemplo: 2024" />
+    <div class="button-group">
+      <button class="modern-button" (click)="listar()">Listar</button>
+    </div>
+  </div>
+
+  <!-- Formulario para verificar -->
+  <div class="form-group">
+    <label for="textoanio">Año:</label>
+    <input 
+      type="number" 
+      id="textoanio" 
+      [(ngModel)]="anioV" 
+      class="input-group" 
+      placeholder="Ejemplo: 2024" 
+      min="1900" 
+      max="2100" 
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="mes">Mes:</label>
+    <input 
+      type="number" 
+      id="mes" 
+      [(ngModel)]="mes" 
+      class="input-group" 
+      placeholder="Ejemplo: 5" 
+      min="1" 
+      max="12" 
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="dia">Día:</label>
+    <input 
+      type="number" 
+      id="dia" 
+      [(ngModel)]="dia" 
+      class="input-group" 
+      placeholder="Ejemplo: 15" 
+      min="1" 
+      max="31" 
+    />
+  </div>
+
+  <div class="button-group">
+    <button class="modern-button" (click)="verificar()">Verificar</button>
+  </div>
+
+  <p class="message">{{ mensaje }}</p>
+</div>
+
+<div class="table-container" *ngIf="mostrarTabla">
+  <ngx-datatable
+    class="ngx-datatable"
+    [rows]="festivos"
+    [columns]="columnas"
+    [limit]="25"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [columnMode]="modoColumna.force">
+  </ngx-datatable>
+</div>

@@ -1,1 +1,215 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importación de temas */
+@import '../node_modules/@swimlane/ngx-datatable/themes/material.css';
+@import '../node_modules/@swimlane/ngx-datatable/themes/dark.css';
+@import '../node_modules/@swimlane/ngx-datatable/themes/bootstrap.css';
+
+/* General */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: linear-gradient(500deg, #2068a8, #d9921f);
+    height: 100vh;
+}
+
+/* Barra de título */
+.barraTituloCRUD {
+    background: rgb(24, 2, 53);
+    color: #dd6e6e;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones */
+.modern-button {
+    background-color: #2ca47e;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s, transform 0.4s;
+}
+
+.modern-button:hover {
+    background-color: #57c81a;
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modern-button:active {
+    transform: translateY(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.button-group {
+  display: flex;
+  flex-direction: column; /* Asegura que los botones estén en columna */
+  align-items: center; /* Centra horizontalmente los botones */
+  gap: 15px; /* Espaciado entre los botones */
+  width: 100%;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra todos los elementos dentro del contenedor */
+  gap: 20px;
+}
+
+/* Input */
+input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+    max-width: 400px;
+}
+
+/* Mensaje de retorno */
+.message {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    text-align: center;
+    color: #ffcccb;
+    font-weight: bold;
+}
+
+/* Tabla */
+.ngx-datatable {
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.452);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ngx-datatable .datatable-header {
+    background: linear-gradient(90deg, #a217c2, #5d11c1, #a422c5ae);
+    background-size: 300% 300%;
+    color: #d3d1d7;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    animation: moveGradient 5s ease infinite;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.ngx-datatable .datatable-header-cell {
+    text-align: left;
+    padding: 12px;
+}
+
+.ngx-datatable .datatable-body-row:nth-child(odd) {
+    background-color: #f45a346d;
+}
+
+.ngx-datatable .datatable-body-row:nth-child(even) {
+    background-color: #a99606;
+}
+
+.ngx-datatable .datatable-body-row:hover {
+    background-color: #0e6b77;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ngx-datatable .datatable-body-cell {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #291818;
+}
+
+/* Contenedor general */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Botones alineados */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+}
+
+.animated-toolbar {
+    background: linear-gradient(90deg, #0b2f55, #0c5829, #0b4893);
+    background-size: 300% 300%;
+    animation: moveGradient 6s ease infinite;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
